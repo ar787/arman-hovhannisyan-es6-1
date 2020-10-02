@@ -6,7 +6,7 @@ class Person {
         setInterval (() => {
             ++this.age;
         }, 1000)
-    }
+    } 
 }
 
 function getRandomInt(min, max) {
@@ -33,12 +33,18 @@ function generateInput() {
 }
 
 function setupTimerForSequence(arr) {
-    setInterval( () => {
-        console.log(arr)
+    let time = setInterval( () => {
+        // console.log(arr)
         for (element of arr) {
-            if (element.age >= 40) { element = null }
+            if (element.age >= 40) { 
+                // element = null 
+                arr.splice(arr.indexOf(element),1)
+                // arr.splice
+            }
+            if(arr.length === 0) {clearInterval(time)}
             console.table([element])
         }
+        console.log("------------------------")
     }, 2000)
 }
 
