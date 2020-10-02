@@ -34,17 +34,14 @@ function generateInput() {
 
 function setupTimerForSequence(arr) {
     let time = setInterval( () => {
-        // console.log(arr)
         for (element of arr) {
             if (element.age >= 40) { 
-                // element = null 
                 arr.splice(arr.indexOf(element),1)
-                // arr.splice
             }
             if(arr.length === 0) {clearInterval(time)}
             console.table([element])
         }
-        console.log("------------------------")
+        console.log("------------------------------------")
     }, 2000)
 }
 
